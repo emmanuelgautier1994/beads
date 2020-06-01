@@ -1,26 +1,25 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import logo from './logo.svg'
+import './App.css'
+import Grid from './components/grid'
+import SizePicker from './components/size-picker'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = { gridSize: 0 }
+  }
+
+  render(){
+    const gridSize = this.state.gridSize
+    return (
+      <div className="App" style={{height: '100%'}}>
+        {gridSize > 0 ?
+        <Grid gridSize={gridSize} goHome={() => { this.setState({gridSize: 0}) }} /> :
+        <SizePicker submitSliderValue={(v) => { this.setState({gridSize: v})} } />}
+      </div>
+    )
+  }
 }
 
-export default App;
+export default App

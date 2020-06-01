@@ -11,3 +11,8 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+/* .cell {
+  background: rgba(256,0,0,0.1);
+  border: 1px solid rgba(256,0,0,0.2)
+} */
