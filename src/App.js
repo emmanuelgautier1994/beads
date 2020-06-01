@@ -15,7 +15,7 @@ class App extends React.Component {
       <div className="App" style={{height: '100%'}}>
         {gridSize > 0 ?
         <Grid gridSize={gridSize} goHome={() => { this.setState({gridSize: 0}) }} /> :
-        <SizePicker submitSliderValue={(v) => { this.setState({gridSize: v})} } />}
+        <SizePicker submitSliderValue={(v) => { this.setState({gridSize: parseInt(v)})} } />}
       </div>
     )
   }
