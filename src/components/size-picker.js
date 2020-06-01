@@ -2,7 +2,7 @@ import React from 'react'
 import './size-picker.css'
 
 const SizePicker = ({ submitSliderValue }) => {
-  const [sizeValue, setSizeValue] = React.useState(5)
+  const [sizeValue, setSizeValue] = React.useState(20)
 
   return (
     <div className="grid-y grid-padding-y align-center-middle text-center" style={{height: '100%'}}>
@@ -20,7 +20,15 @@ const SizePicker = ({ submitSliderValue }) => {
         {sizeValue} x {sizeValue}
       </div>
       <div className="cell small-1">
-      <button type="button" className="success button" onClick={()=>{submitSliderValue(sizeValue)}}>Let's go!</button>
+      <button
+        type="button" className="success button"
+        onClick={(e)=>{
+          e.stopPropagation()
+          submitSliderValue(sizeValue)}
+        }
+      >
+        Let's go!
+      </button>
       </div>
     </div>
   )
