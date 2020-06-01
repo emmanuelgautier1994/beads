@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/beads/static/css/main.e73bb9f4.chunk.css",
+    "main.js": "/beads/static/js/main.80332399.chunk.js",
+    "main.js.map": "/beads/static/js/main.80332399.chunk.js.map",
+    "runtime-main.js": "/beads/static/js/runtime-main.6aab70e8.js",
+    "runtime-main.js.map": "/beads/static/js/runtime-main.6aab70e8.js.map",
+    "static/js/2.ca752955.chunk.js": "/beads/static/js/2.ca752955.chunk.js",
+    "static/js/2.ca752955.chunk.js.map": "/beads/static/js/2.ca752955.chunk.js.map",
+    "index.html": "/beads/index.html",
+    "precache-manifest.eb2b0d31946c5a813af6d45d3dffceef.js": "/beads/precache-manifest.eb2b0d31946c5a813af6d45d3dffceef.js",
+    "service-worker.js": "/beads/service-worker.js",
+    "static/css/main.e73bb9f4.chunk.css.map": "/beads/static/css/main.e73bb9f4.chunk.css.map",
+    "static/js/2.ca752955.chunk.js.LICENSE.txt": "/beads/static/js/2.ca752955.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.6aab70e8.js",
+    "static/js/2.ca752955.chunk.js",
+    "static/css/main.e73bb9f4.chunk.css",
+    "static/js/main.80332399.chunk.js"
+  ]
+}
