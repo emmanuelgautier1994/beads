@@ -9,6 +9,8 @@ class Grid extends React.Component {
     this.state = { currentColor: "#ed281a" }
   }
 
+  pickNewColor = (c) => {this.setState({currentColor: c})}
+
 
   render(){
     return (
@@ -21,7 +23,7 @@ class Grid extends React.Component {
               </button>
             </div>
             <div className="cell small-11">
-              <ColorPicker />
+              <ColorPicker current={this.state.currentColor} setCurrentColor={this.pickNewColor} />
             </div>
           </div>
         </div>
