@@ -1,0 +1,15 @@
+/* .square {
+  position: relative;
+  height: 30%;
+}
+
+.square:after {
+  content: "";
+  display: block;
+  padding-bottom: 50%;
+}
+
+.content {
+  x: 50%;
+  y: 50%;
+} */

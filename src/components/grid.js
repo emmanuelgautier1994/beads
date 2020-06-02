@@ -6,13 +6,19 @@ import { CurrentColorContext } from './current-color-context'
 class Grid extends React.Component {
   constructor(props) {
     super(props)
-    this.state = { currentColor: "#ed281a" }
+    this.state = { currentColor: "#ed281a", history: [] }
   }
 
   pickNewColor = (c) => {this.setState({currentColor: c})}
 
 
+  updateHistory = (c) => {this.setState((prevState) => ({
+    history: [...new Set(prevState.history.concat([c]))]
+  }))}
+
+
   render(){
+    console.log(this.state)
     return (
       <div className="grid-y grid-padding-y grid-padding-x align-center-middle" style={{height: '100%'}}>
         <div className="cell small-1 text-left">
@@ -27,9 +33,9 @@ class Grid extends React.Component {
             </div>
           </div>
         </div>
-        <div className="cell auto">
+        <div className="cell small-11">
           <CurrentColorContext.Provider value={this.state.currentColor}>
-                <Canvas size={this.props.gridSize} />
+                <Canvas size={this.props.gridSize} onClickBead={() => this.updateHistory(this.state.currentColor)} />
           </CurrentColorContext.Provider>
         </div>
       </div>
