@@ -29,7 +29,7 @@ class Grid extends React.Component {
               </button>
             </div>
             <div className="cell small-11">
-              <ColorPicker current={this.state.currentColor} setCurrentColor={this.pickNewColor} />
+              <ColorPicker current={this.state.currentColor} history={this.state.history} setCurrentColor={this.pickNewColor} />
             </div>
           </div>
         </div>
