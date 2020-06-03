@@ -24,6 +24,18 @@ class ColorPicker extends React.Component {
               <b>{this.props.current.toUpperCase()}</b>
           {/* <svg height="100%"><rect x="0" y="0" width="1" height="1" fill={this.props.current}></rect></svg> */}
         </div>
+        <div className="cell small-4">
+          <div className="grid-x grid-margin-y">
+            {this.props.history.slice(0,12).map((c, i) => (
+              <div
+                key={`history-${i}`}
+                className='cell small-1'
+                style={{background: c, width: '2em', height: '2em', cursor: 'pointer', borderRadius:'2em', margin: '0 0.5em'}}
+                onClick={() => {this.props.setCurrentColor(c)}}
+              />
+            ))}
+          </div>
+        </div>
       </div>
     )
   }
