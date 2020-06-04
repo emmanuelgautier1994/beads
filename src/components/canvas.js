@@ -1,5 +1,5 @@
 import React from 'react'
-import { CurrentColorContext } from './current-color-context'
+// import { CurrentColorContext } from './current-color-context'
 import Bead from './bead'
 
 class Canvas extends React.Component {
@@ -8,10 +8,12 @@ class Canvas extends React.Component {
     this.state = { }
   }
 
-  currentColor = () => this.context
+  // shouldComponentUpdate = () => false
+
+  // currentColor = () => this.context
   range = (s) => [...Array(s).keys()]
 
-  handleClickOrTouch = () => {this.props.onClickBead(this.currentColor())}
+  handleClickOrTouch = this.props.onClickBead
 
   render(){
     const size = this.props.size
@@ -20,13 +22,13 @@ class Canvas extends React.Component {
       <svg width="100%" height="100%" viewBox={viewBox} onClick={this.handleClickOrTouch}
       onTouchStart={this.handleClickOrTouch}>
         {this.range(size).flatMap(x => this.range(size).map(y => 
-          <Bead key={size*x + y} x={x} y={y} />
+          <Bead key={size*x + y} x={x} y={y} currentColor={this.props.currentColor} />
         ))}
       </svg>
     )
   }
 }
 
-Canvas.contextType = CurrentColorContext
+// Canvas.contextType = CurrentColorContext
 
 export default Canvas

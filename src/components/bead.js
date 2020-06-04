@@ -1,5 +1,6 @@
 import React from 'react'
-import { CurrentColorContext } from './current-color-context'
+// import { CurrentColorContext } from './current-color-context'
+// import { HSVToHex } from '../utils/color-utils'
 
 class Bead extends React.Component {
   constructor(props) {
@@ -7,17 +8,13 @@ class Bead extends React.Component {
     this.state = { fill: "white"}
   }
 
-  currentColor = () => this.context
+  shouldComponentUpdate = (_, nextState) => {
+    return nextState.fill !== this.state.fill
+  }
 
-  color = () => this.setState({fill: this.currentColor()})
-  // handleTouch = (e) => {
-  //   if(this.state.fill === "red"){
-  //     console.log(":(")
-  //     return
-  //   }
-  //   console.log(new Date())
-  //   this.color("red")
-  // }
+  // currentColor = () => this.context
+
+  color = () => this.setState({fill: this.props.currentColor})
 
   render(){
     const { x, y } = this.props
@@ -33,6 +30,6 @@ class Bead extends React.Component {
   }
 }
 
-Bead.contextType = CurrentColorContext
+// Bead.contextType = CurrentColorContext
 
 export default Bead
