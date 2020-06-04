@@ -3,7 +3,7 @@ import Canvas from './canvas'
 import ColorPicker from './color-picker'
 import { CurrentColorContext } from './current-color-context'
 
-class Grid extends React.Component {
+class Workspace extends React.Component {
   constructor(props) {
     super(props)
     this.state = { currentColor: "#ed281a", history: [] }
@@ -43,4 +43,4 @@ class Grid extends React.Component {
   }
 }
 
-export default Grid
+export default Workspace
