@@ -22,7 +22,7 @@ class ColorPicker extends React.Component {
         <div className="cell small-2">
           <HSVSliders
             color={this.props.current}
-            onChange={(c) => {this.props.setCurrentColor(c.hex)}}
+            updateCurrentColor={(c) => {this.props.setCurrentColor(c)}}
           />
         </div>
         <div className="cell small-2">

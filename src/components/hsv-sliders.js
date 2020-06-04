@@ -1,5 +1,5 @@
 import React from 'react'
-import { hexToHSV } from '../utils/color-utils'
+import { hexToHSV, HSVToHex } from '../utils/color-utils'
 
 class HSVSliders extends React.Component{
   constructor(props) {
@@ -11,14 +11,33 @@ class HSVSliders extends React.Component{
     const HSV = hexToHSV(this.props.color)
     return(
       <div className='grid-y align-center-middle text-center'>
+        <span>Hex : {HSVToHex(HSV.h, HSV.s, HSV.v)}</span>
         <div className="cell small-4">
           <span>H : {HSV.h.toFixed(3)}</span>
+          <input
+            className="slider"
+            type="range" min="0" max="1" step="0.001"
+            value={HSV.h.toFixed(3)}
+            onChange={(e) => {this.props.updateCurrentColor(HSVToHex(e.target.value, HSV.s, HSV.v))}}
+          />
         </div>
         <div className="cell small-4">
           <span>S : {HSV.s.toFixed(3)}</span>
+          <input
+            className="slider"
+            type="range" min="0" max="1" step="0.001"
+            value={HSV.s.toFixed(3)}
+            onChange={(e) => {this.props.updateCurrentColor(HSVToHex(HSV.h, e.target.value, HSV.v))}}
+          />
         </div>
         <div className="cell small-4">
           <span>V : {HSV.v.toFixed(3)}</span>
+          <input
+            className="slider"
+            type="range" min="0" max="1" step="0.001"
+            value={HSV.v.toFixed(3)}
+            onChange={(e) => {this.props.updateCurrentColor(HSVToHex(HSV.h, HSV.s, e.target.value))}}
+          />
         </div>
       </div>
     )
