@@ -1,4 +1,5 @@
 import React from 'react'
+import './hsv-sliders.css'
 
 class HSVSliders extends React.Component{
   constructor(props) {
@@ -6,17 +7,20 @@ class HSVSliders extends React.Component{
     this.state = { }
   }
 
+  
+  
   handleChange = (e) => {
     this.props.setHSorV(e.target.name, parseFloat(e.target.value))
   }
-
+  
   render(){
     const HSV = this.props.color
+
     return(
       <div className='grid-y align-center-middle text-center'>
         <div className="cell small-4">
           <input
-            className="slider"
+            className="hsv-slider hue-gradient"
             name="H"
             type="range" min="0" max="1" step="0.01"
             value={HSV.H}
@@ -25,7 +29,7 @@ class HSVSliders extends React.Component{
         </div>
         <div className="cell small-4">
           <input
-            className="slider"
+            className="hsv-slider"
             name="S"
             type="range" min="0" max="1" step="0.01"
             value={HSV.S}
@@ -34,7 +38,7 @@ class HSVSliders extends React.Component{
         </div>
         <div className="cell small-4">
           <input
-            className="slider"
+            className="hsv-slider"
             name="V"
             type="range" min="0" max="1" step="0.01"
             value={HSV.V}

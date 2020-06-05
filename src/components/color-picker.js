@@ -19,7 +19,7 @@ class ColorPicker extends React.Component {
     }
 
     return (
-      <div className="grid-x grid-padding-x grid-padding-y align-center-middle" style={{height: '100%'}}>
+      <div className="grid-y grid-padding-x grid-margin-y align-center-middle" style={{height: '100%'}}>
         <div className="cell small-6">
           <HSVSliders
             color={this.props.current}

@@ -32,9 +32,9 @@ class Workspace extends React.Component {
     const { H, S, V , history } = this.state
 
     return (
-      <div className="grid-y grid-padding-y grid-padding-x align-center-middle" style={{height: '100%'}}>
-        <div className="cell small-1 text-left">
-          <div className="grid-x">
+      <div className="grid-x grid-margin-x align-center-middle" style={{width: '100%', height: '100%'}}>
+        <div className="cell small-2 text-center">
+          <div className="grid-y grid-padding-y">
             <div className="cell small-1">
               <button type="button" className="alert button" onClick={this.props.goHome}>
                 <i className="fi-home"></i>
@@ -45,8 +45,8 @@ class Workspace extends React.Component {
             </div>
           </div>
         </div>
-        <div className="cell small-11">
-                <Canvas size={this.props.gridSize} currentColor={HSVToHex(H, S, V)} onClickBead={this.updateHistory} />
+        <div className="cell small-9 align-center-middle">
+          <Canvas size={this.props.gridSize} currentColor={HSVToHex(H, S, V)} onClickBead={this.updateHistory} />
         </div>
       </div>
     )
