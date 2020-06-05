@@ -14,7 +14,7 @@ class Workspace extends React.Component {
   setS = (newS) => {this.setState({s: newS})}
   setV = (newV) => {this.setState({v: newV})}
 
-  setHSV = ({h, s, v}) => {this.setState({h, s, v})}
+  setHSV = ({H, S, V}) => {this.setState({H, S, V})}
   setHSorV = (letter, newValue) => {
     if(!(['H', 'S', 'V'].includes(letter))) return
     this.setState({[letter]: newValue})

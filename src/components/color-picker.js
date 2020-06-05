@@ -20,7 +20,7 @@ class ColorPicker extends React.Component {
 
     return (
       <div className="grid-x grid-padding-x grid-padding-y align-center-middle" style={{height: '100%'}}>
-        <div className="cell small-4">
+        <div className="cell small-6">
           <HSVSliders
             color={this.props.current}
             setHSorV={this.props.setHSorV}
@@ -29,7 +29,7 @@ class ColorPicker extends React.Component {
         <div className="cell small-1 text-center" style={currentColorStyle}>
               <b>{hexCurrent.toUpperCase()}</b>
         </div>
-        <div className="cell small-4">
+        <div className="cell small-5">
           <div className="grid-x grid-margin-y">
             {this.props.history.slice(0,12).map((c, i) => (
               <div
