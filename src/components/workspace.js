@@ -10,7 +10,6 @@ class Workspace extends React.Component {
     this.state = { H: 0.5, S: 0.8, V: 0.6, history: [] }
   }
 
-  // setCurrentColor = (c) => {this.setState({})}
   setH = (newH) => {this.setState({h: newH})}
   setS = (newS) => {this.setState({s: newS})}
   setV = (newV) => {this.setState({v: newV})}
@@ -18,7 +17,6 @@ class Workspace extends React.Component {
   setHSV = ({h, s, v}) => {this.setState({h, s, v})}
   setHSorV = (letter, newValue) => {
     if(!(['H', 'S', 'V'].includes(letter))) return
-    console.log("🧠")
     this.setState({[letter]: newValue})
   }
 
@@ -48,9 +46,7 @@ class Workspace extends React.Component {
           </div>
         </div>
         <div className="cell small-11">
-          {/* <CurrentColorContext.Provider value={HSVToHex(H, S, V)}> */}
                 <Canvas size={this.props.gridSize} currentColor={HSVToHex(H, S, V)} onClickBead={this.updateHistory} />
-          {/* </CurrentColorContext.Provider> */}
         </div>
       </div>
     )

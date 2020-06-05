@@ -1,7 +1,5 @@
 import React from 'react'
-import { CurrentColorContext } from './current-color-context'
 import './color-picker.css'
-// import { SliderPicker } from 'react-color'
 import { HSVToHex } from '../utils/color-utils'
 import HSVSliders from './hsv-sliders'
 
@@ -22,18 +20,12 @@ class ColorPicker extends React.Component {
 
     return (
       <div className="grid-x grid-padding-x grid-padding-y align-center-middle" style={{height: '100%'}}>
-        <div className="cell small-2">
+        <div className="cell small-4">
           <HSVSliders
             color={this.props.current}
             setHSorV={this.props.setHSorV}
           />
         </div>
-        {/* <div className="cell small-2">
-          <SliderPicker
-            color={this.props.current}
-            onChange={(c) => {this.props.setCurrentColor(c.hex)}}
-          />
-        </div> */}
         <div className="cell small-1 text-center" style={currentColorStyle}>
               <b>{hexCurrent.toUpperCase()}</b>
         </div>
@@ -53,8 +45,5 @@ class ColorPicker extends React.Component {
     )
   }
 }
-
-ColorPicker.contextType = CurrentColorContext
-
 
 export default ColorPicker
