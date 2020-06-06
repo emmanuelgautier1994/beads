@@ -49,6 +49,18 @@ export const HSVToHex = (h, s, v) => {
   return RGBToHex(Math.round(r*255), Math.round(g*255), Math.round(b*255))
 }
 
+export const CSSHSL = ({H, S, L}) => (
+  `hsl(${H}, ${S}%, ${L}%)`
+)
+
+export const SatGradient = (H, L) => (
+  `linear-gradient(to right, hsl(${H}, 0%, ${L}%), hsl(${H}, 100%, ${L}%))`
+)
+
+export const LightGradient = (H, S) => (
+  `linear-gradient(to right, hsl(${H}, ${S}%, 0%), hsl(${H}, ${S}%, 50%), hsl(${H}, ${S}%, 100%))`
+)
+
 
 
 const hexToRGB = (hex) => {

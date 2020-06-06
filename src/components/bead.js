@@ -1,4 +1,5 @@
 import React from 'react'
+import { CSSHSL } from '../utils/color-utils'
 
 class Bead extends React.Component {
   constructor(props) {
@@ -6,20 +7,20 @@ class Bead extends React.Component {
     this.state = { fill: "white"}
   }
 
-  shouldComponentUpdate = (_, nextState) => {
-    return nextState.fill !== this.state.fill
-  }
-
-  color = () => this.setState({fill: this.props.currentColor})
+  // shouldComponentUpdate = (_, nextState) => {
+  //   return nextState.fill !== this.state.fill
+  // }
 
   render(){
-    const { x, y } = this.props
+    const { x, y, currentColor } = this.props
+    const color = () => this.setState({fill: CSSHSL(currentColor)})
+
     return (
       <rect
         x={2*x} y={x % 2 ? 2*y + 1.25 : 2*y + 0.25} width="2" height="2"
         fill={this.state.fill} stroke="black" strokeWidth="0.1"
-        onClick={this.color}
-        onTouchStart={this.color}
+        onClick={color}
+        onTouchStart={color}
       />
     )
   }

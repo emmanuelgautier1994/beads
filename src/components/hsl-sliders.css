@@ -1,26 +1,27 @@
-.hsv-slider {
+.hsl-slider {
   -webkit-appearance: none;
-  width: 80%;
   height: 0.6em;
+  width: 90%;
   cursor: pointer;
   border-radius: 0.2em;
 }
 
-.hsv-slider::-webkit-slider-thumb {
+.hsl-slider::-webkit-slider-thumb {
   -webkit-appearance: none;
   height: 1em;
   width: 1em;
   border-radius: 1em;
   background: grey;
   cursor: pointer;
+  box-shadow: 0 0 0.2em rgba(0,0,0,0.4);
 }
 
-.hsv-slider:focus {
+.hsl-slider:focus {
   outline: none;
 }
 
 
-.hsv-slider::-ms-track {
+.hsl-slider::-ms-track {
   width: 100%;
   cursor: pointer;
 

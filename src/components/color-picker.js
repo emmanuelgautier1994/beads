@@ -1,7 +1,8 @@
 import React from 'react'
 import './color-picker.css'
-import { HSVToHex } from '../utils/color-utils'
-import HSVSliders from './hsv-sliders'
+// import { HSVToHex } from '../utils/color-utils'
+import HSLSliders from './hsl-sliders'
+import { CSSHSL } from '../utils/color-utils'
 
 class ColorPicker extends React.Component {
   constructor(props) {
@@ -11,32 +12,35 @@ class ColorPicker extends React.Component {
 
 
   render(){
-    const hexCurrent = HSVToHex(...Object.values(this.props.current))
+    // const hexCurrent = HSVToHex(...Object.values(this.props.current))
+    const { current, history, setCurrentColor, setOneColorParam } = this.props
     const currentColorStyle = {
-      background: hexCurrent,
-      color: "white",
-      borderRadius: '0.5em',
+      borderRadius: '100%',
+      height: '5em',
+      width: '5em'
     }
 
     return (
-      <div className="grid-y grid-padding-x grid-margin-y align-center-middle" style={{height: '100%'}}>
-        <div className="cell small-6">
-          <HSVSliders
-            color={this.props.current}
-            setHSorV={this.props.setHSorV}
+      <div className="grid-x grid-padding-x grid-margin-y align-center-middle" style={{height: '100%'}}>
+        <div className="cell small-2">
+          <HSLSliders
+            color={current}
+            setOneColorParam={setOneColorParam}
           />
         </div>
-        <div className="cell small-1 text-center" style={currentColorStyle}>
-              <b>{hexCurrent.toUpperCase()}</b>
+        <div className="cell small-1 text-center text-middle" style={{height: '100%'}}>
+          <svg style={currentColorStyle} viewBox='0 0 1 1'>
+            <rect x='0' y='0' width='1' height='1' fill={CSSHSL(current)} />
+          </svg>
         </div>
         <div className="cell small-5">
           <div className="grid-x grid-margin-y">
-            {this.props.history.slice(0,12).map((c, i) => (
+            {history.slice(0,12).map((c, i) => (
               <div
                 key={`history-${i}`}
                 className='cell small-1'
-                style={{background: HSVToHex(...Object.values(c)), width: '2em', height: '2em', cursor: 'pointer', borderRadius:'2em', margin: '0 0.5em'}}
-                onClick={() => {this.props.setHSV(c)}}
+                style={{background: CSSHSL(c), width: '2em', height: '2em', cursor: 'pointer', borderRadius:'2em', margin: '0 0.5em'}}
+                onClick={() => {setCurrentColor(c)}}
               />
             ))}
           </div>

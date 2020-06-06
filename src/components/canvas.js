@@ -9,14 +9,13 @@ class Canvas extends React.Component {
 
   range = (s) => [...Array(s).keys()]
 
-  
   render(){
     const handleClickOrTouch = this.props.onClickBead
     const size = this.props.size
     const viewBox = `0 0 ${2*size} ${2*(size+1)}`
     return (
       <svg 
-        height="90vh" viewBox={viewBox}
+        height="95%" viewBox={viewBox}
         onClick={handleClickOrTouch} onTouchStart={handleClickOrTouch}
       >
         {this.range(size).flatMap(x => this.range(size).map(y => 
