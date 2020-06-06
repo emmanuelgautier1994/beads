@@ -46,7 +46,8 @@
   appearance: none;
   width: 25px;
   height: 25px;
-  border-radius: 50%; 
+  border-radius: 50%;
+  border: none;
   background: #4CAF50;
   cursor: pointer;
 }
