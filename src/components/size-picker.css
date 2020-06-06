@@ -1,12 +1,42 @@
+.title {
+  font-family: 'Montserrat Alternates';
+  font-size: 10em;
+  font-weight: 700;
+}
+
+.letter-b {
+  color: hsl(175, 65%, 35%);
+}
+
+.letter-e {
+  color: hsl(150, 74%, 72%);
+}
+
+.letter-a {
+  color: hsl(50, 91%, 70%);
+}
+
+.letter-d {
+  color: hsl(11, 100%, 85%);
+}
+
+.letter-s {
+  color: hsl(16, 95%, 69%);
+}
+
+.slider-value {
+  font-weight: 900;
+  font-size: 2em;
+}
+
 .slider {
   -webkit-appearance: none;
-  height: 15px;
-  width: 200px;
-  margin: 15px;
-  border-radius: 5px;  
+  height: 1em;
+  width: 90%;
+  border-radius: 0.4em;
+  margin: 0.5em 0;
   background: #d3d3d3;
   outline: none;
-  opacity: 0.7;
   -webkit-transition: .2s;
   transition: opacity .2s;
 }
@@ -26,5 +56,16 @@
   height: 25px;
   border-radius: 50%;
   background: #4CAF50;
+  cursor: pointer;
+}
+
+.go-button {
+  width: 4em;
+  height: 4em;
+  border-radius: 4em;
+  background: #4CAF50;
+  font-weight: 900;
+  font-size: 2em;
+  color: white;
   cursor: pointer;
 }

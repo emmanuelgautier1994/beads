@@ -20,7 +20,9 @@ class Workspace extends React.Component {
   updateHistory = () => {
     this.setState((prevState) => {
       if(prevState.history.some(x => x.H === prevState.H && x.S === prevState.S && x.L === prevState.L)) return {}
-      return {history: [{H: prevState.H, S: prevState.S, L: prevState.L}].concat(prevState.history)}
+      return {
+        history: [{H: prevState.H, S: prevState.S, L: prevState.L}].concat(prevState.history).slice(0,12)
+      }
     })
   }
 

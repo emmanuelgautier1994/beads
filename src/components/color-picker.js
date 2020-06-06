@@ -35,11 +35,11 @@ class ColorPicker extends React.Component {
         </div>
         <div className="cell small-5">
           <div className="grid-x grid-margin-y">
-            {history.slice(0,12).map((c, i) => (
+            {history.map((c, i) => (
               <div
                 key={`history-${i}`}
                 className='cell small-1'
-                style={{background: CSSHSL(c), width: '2em', height: '2em', cursor: 'pointer', borderRadius:'2em', margin: '0 0.5em'}}
+                style={{background: CSSHSL(c), width: '2em', height: '2em', cursor: 'pointer', borderRadius:'0.2em', margin: '0 0.5em'}}
                 onClick={() => {setCurrentColor(c)}}
               />
             ))}
