@@ -21,6 +21,12 @@ class Bead extends React.Component {
         fill={this.state.fill} stroke="black" strokeWidth="0.1"
         onClick={color}
         onTouchStart={color}
+        onMouseEnter={(e) => {
+          if(e.buttons === 1) color()
+        }}
+        onMouseLeave={(e) => {
+          if(e.buttons === 1) color()
+        }}
       />
     )
   }
