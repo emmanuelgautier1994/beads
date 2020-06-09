@@ -1,5 +1,4 @@
 import React from 'react'
-import { CSSHSL } from '../utils/color-utils'
 
 class Bead extends React.Component {
   constructor(props) {
@@ -12,21 +11,39 @@ class Bead extends React.Component {
   // }
 
   render(){
-    const { x, y, currentColor } = this.props
-    const color = () => this.setState({fill: CSSHSL(currentColor)})
+    const { x, y, number, color, paint, stopPainting } = this.props
+    const paintOnce = () => {
+      paint(number)
+      stopPainting()
+    }
+    // const color = () => this.setState({fill: CSSHSL(currentColor)})
 
     return (
       <rect
+        id={this.props.number}
         x={2*x} y={x % 2 ? 2*y + 1.25 : 2*y + 0.25} width="2" height="2"
-        fill={this.state.fill} stroke="black" strokeWidth="0.1"
-        onClick={color}
-        onTouchStart={color}
+        fill={color} stroke="black" strokeWidth="0.1"
+        style={{touchAction: 'none'}}
+        // onPointerDown={(e) => {
+        //   console.log('releasing...')
+        //   this.releastPointerCapture(e.pointerId)
+        // }}
+        // onTouchEnter={(e) => {
+        //   console.log("⛰")
+        // }}
+        onTouchMove={(e) => {
+          paint(document.elementFromPoint(e.touches[0].pageX, e.touches[0].pageY).id)
+        }}
+        onTouchEnd={stopPainting}
+        onClick={paintOnce}
+        // onTouchStart={color}
         onMouseEnter={(e) => {
-          if(e.buttons === 1) color()
+          if(e.buttons === 1) paintOnce()
         }}
-        onMouseLeave={(e) => {
-          if(e.buttons === 1) color()
-        }}
+        onMouseDown={paintOnce}
+        // onMouseLeave={(e) => {
+        //   if(e.buttons === 1) color()
+        // }}
       />
     )
   }
