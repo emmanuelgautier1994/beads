@@ -1,6 +1,6 @@
 import React from 'react'
 import './hsl-sliders.css'
-import { SatGradient, LightGradient } from '../utils/color-utils'
+import { SatGradient, LightGradient } from '../utils/color'
 
 class HSLSliders extends React.Component{
   constructor(props) {
