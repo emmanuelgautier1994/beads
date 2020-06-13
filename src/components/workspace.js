@@ -8,7 +8,12 @@ import { Color } from '../utils/color'
 class Workspace extends React.Component {
   constructor(props) {
     super(props)
-    this.state = { currentColor: new Color(190, 80, 60), currentColorHistory: [], canvasHistory: [{}], canvasHistoryCursor: 0 }
+    this.state = {
+      currentColor: new Color(190, 80, 60),
+      currentColorHistory: [],
+      canvasHistory: [{}],
+      canvasHistoryCursor: 0
+    }
   }
 
   setCurrentColor = (color) => {this.setState({currentColor: color})}
@@ -31,13 +36,11 @@ class Workspace extends React.Component {
     })
   }
 
-  // TODO : update for new color
   commitCanvas = (canvas) => {
     this.setState((prevState) => {
       if(canvasesAreTheSame(prevState.canvasHistory[prevState.canvasHistoryCursor], canvas))
         return {}
       
-      // console.log(prevState.canvasHistory.slice(0, prevState.canvasHistoryCursor+1))
       return {
         canvasHistoryCursor: prevState.canvasHistoryCursor + 1,
         canvasHistory: prevState.canvasHistory.slice(0, prevState.canvasHistoryCursor+1).concat([canvas])
