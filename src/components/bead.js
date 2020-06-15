@@ -1,5 +1,7 @@
 import React from 'react'
 
+const beadXStretchFactor = 0.82
+
 class Bead extends React.Component {
   constructor(props) {
     super(props)
@@ -7,13 +9,16 @@ class Bead extends React.Component {
   }
 
   render(){
-    const { x, y, number, color, paint, stopPainting } = this.props
+    const { x, y, number, viewBoxWidth, color, paint, stopPainting } = this.props
     const paintOnce = () => paint(number)
+
+    const xOffset = (1 - beadXStretchFactor) * viewBoxWidth / 2
+    const beadWidth = 2 * beadXStretchFactor
 
     return (
       <rect
         id={this.props.number}
-        x={2*x} y={x % 2 ? 2*y + 1.25 : 2*y + 0.25} width="2" height="2"
+        x={xOffset + beadWidth*x} y={x % 2 ? 2*y + 1.25 : 2*y + 0.25} width={beadWidth} height="2"
         fill={color} stroke="black" strokeWidth="0.1"
         style={{touchAction: 'none'}}
         onMouseDown={paintOnce}

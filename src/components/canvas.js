@@ -15,7 +15,10 @@ class Canvas extends React.Component {
   render(){
     const handleClickOrTouch = this.props.onClickBead
     const { size, paint, stopPainting } = this.props
-    const viewBox = `0 0 ${2*size} ${2*(size+1)}`
+    
+    const viewBoxWidth = 2*size
+    const viewBoxHeight = 2*(size+1)
+    const viewBox = `0 0 ${viewBoxWidth} ${viewBoxHeight}`
 
     return (
       <svg 
@@ -31,6 +34,7 @@ class Canvas extends React.Component {
               number={beadIndex}
               x={x}
               y={y}
+              viewBoxWidth={viewBoxWidth}
               color={this.getFillColor(beadIndex).CSS}
               paint={paint}
               stopPainting={stopPainting}
