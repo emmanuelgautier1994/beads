@@ -1,22 +1,22 @@
 {
   "files": {
     "main.css": "/beads/static/css/main.80e71cfc.chunk.css",
-    "main.js": "/beads/static/js/main.00ca8a8c.chunk.js",
-    "main.js.map": "/beads/static/js/main.00ca8a8c.chunk.js.map",
+    "main.js": "/beads/static/js/main.df2d7b79.chunk.js",
+    "main.js.map": "/beads/static/js/main.df2d7b79.chunk.js.map",
     "runtime-main.js": "/beads/static/js/runtime-main.6aab70e8.js",
     "runtime-main.js.map": "/beads/static/js/runtime-main.6aab70e8.js.map",
-    "static/js/2.63e7af71.chunk.js": "/beads/static/js/2.63e7af71.chunk.js",
-    "static/js/2.63e7af71.chunk.js.map": "/beads/static/js/2.63e7af71.chunk.js.map",
+    "static/js/2.ba81d9a3.chunk.js": "/beads/static/js/2.ba81d9a3.chunk.js",
+    "static/js/2.ba81d9a3.chunk.js.map": "/beads/static/js/2.ba81d9a3.chunk.js.map",
     "index.html": "/beads/index.html",
-    "precache-manifest.b7583db23a6d392ac110ba00adea8beb.js": "/beads/precache-manifest.b7583db23a6d392ac110ba00adea8beb.js",
+    "precache-manifest.2777ba44e006fb66925ec15b8b44670c.js": "/beads/precache-manifest.2777ba44e006fb66925ec15b8b44670c.js",
     "service-worker.js": "/beads/service-worker.js",
     "static/css/main.80e71cfc.chunk.css.map": "/beads/static/css/main.80e71cfc.chunk.css.map",
-    "static/js/2.63e7af71.chunk.js.LICENSE.txt": "/beads/static/js/2.63e7af71.chunk.js.LICENSE.txt"
+    "static/js/2.ba81d9a3.chunk.js.LICENSE.txt": "/beads/static/js/2.ba81d9a3.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.6aab70e8.js",
-    "static/js/2.63e7af71.chunk.js",
+    "static/js/2.ba81d9a3.chunk.js",
     "static/css/main.80e71cfc.chunk.css",
-    "static/js/main.00ca8a8c.chunk.js"
+    "static/js/main.df2d7b79.chunk.js"
   ]
 }
