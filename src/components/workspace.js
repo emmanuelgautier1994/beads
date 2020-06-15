@@ -11,6 +11,7 @@ class Workspace extends React.Component {
     this.state = {
       currentColor: new Color(190, 80, 60),
       currentColorHistory: [],
+      paintBuffer: [],
       canvasHistory: [{}],
       canvasHistoryCursor: 0
     }
@@ -36,6 +37,30 @@ class Workspace extends React.Component {
     })
   }
 
+  paint = (n) => {
+    if(this.state.paintBuffer.includes(n)) return
+    this.setState((prevState) => ({
+      paintBuffer: prevState.paintBuffer.concat([n]),
+      [`colorOfBead${n}`]: prevState.currentColor
+    }))
+  }
+
+  stopPainting = () => {
+    this.setState(
+      {paintBuffer: []},
+      () => {this.commitCanvas(this.getColorState(this.state))}
+    )
+  }
+
+  getColorState = (fullState) => this.getColoredBeads(fullState)
+    .reduce((obj, key) => {
+      obj[key] = fullState[key]
+      return obj
+    }, {})
+
+  getColoredBeads = (fullState) => Object.keys(fullState)
+    .filter(key => key.slice(0,11) === 'colorOfBead')
+
   commitCanvas = (canvas) => {
     this.setState((prevState) => {
       if(canvasesAreTheSame(prevState.canvasHistory[prevState.canvasHistoryCursor], canvas))
@@ -48,15 +73,31 @@ class Workspace extends React.Component {
     })
   }
 
+  newColorState = (canvas, prevState) => Object.assign(
+    this.getColoredBeads(prevState)
+      .reduce((obj, key) => {
+        obj[key] = null
+        return obj
+      }, {}),
+    canvas
+  )
+
   canUndo = () => (this.state.canvasHistoryCursor > 0)
   canRedo = () => (this.state.canvasHistoryCursor < this.state.canvasHistory.length - 1)
 
-  undo = () => this.setState((prevState) => ({canvasHistoryCursor: prevState.canvasHistoryCursor - 1}))
-  redo = () => this.setState((prevState) => ({canvasHistoryCursor: prevState.canvasHistoryCursor + 1}))
+  undo = () => this.setState((prevState) => ({
+    canvasHistoryCursor: prevState.canvasHistoryCursor - 1,
+    ...this.newColorState(prevState.canvasHistory[prevState.canvasHistoryCursor - 1], prevState)
+  }))
+  redo = () => this.setState((prevState) => ({
+    canvasHistoryCursor: prevState.canvasHistoryCursor + 1,
+    ...this.newColorState(prevState.canvasHistory[prevState.canvasHistoryCursor + 1], prevState)
+  }))
 
 
   render(){
     const { currentColorHistory, currentColor } = this.state
+    const beadColors = this.getColorState(this.state)
 
     return (
       <div className="grid-y align-center-middle" style={{width: '100%', height: '100%'}}>
@@ -87,9 +128,10 @@ class Workspace extends React.Component {
         <div className="cell small-10 align-center-middle">
           <Canvas
             size={this.props.gridSize}
-            currentColor={currentColor}
-            commitCanvas={this.commitCanvas}
+            beadColors={beadColors}
             onClickBead={this.updateCurrentColorHistory}
+            paint={this.paint}
+            stopPainting={this.stopPainting}
           />
         </div>
       </div>
