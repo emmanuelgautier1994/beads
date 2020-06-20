@@ -100,8 +100,8 @@ class Workspace extends React.Component {
     const beadColors = this.getColorState(this.state)
 
     return (
-      <div className="grid-y align-center-middle" style={{width: '100%', height: '100%'}}>
-        <div className="cell small-2 text-center">
+      <div className="grid-y grid-frame">
+        <div className="cell small-2 header text-center">
           <div className="grid-x align-center-middle" style={{height: '100%'}}>
             <div className="cell small-1">
               <button type="button" className="alert button" onClick={this.props.goHome}>
