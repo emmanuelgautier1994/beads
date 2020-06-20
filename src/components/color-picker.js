@@ -1,6 +1,7 @@
 import React from 'react'
 import './color-picker.css'
 import HSLSliders from './hsl-sliders'
+import ColorHistory from './color-history'
 
 class ColorPicker extends React.Component {
   constructor(props) {
@@ -25,22 +26,13 @@ class ColorPicker extends React.Component {
             setOneColorParam={setOneColorParam}
           />
         </div>
-        <div className="cell small-1 text-center text-middle" style={{height: '100%'}}>
-          <svg style={currentColorStyle} viewBox='0 0 1 1'>
+        <div className="cell small-3 text-center text-middle" style={{height: '100%'}}>
+          <svg style={currentColorStyle} width='100%' viewBox='0 0 1 1'>
             <rect x='0' y='0' width='1' height='1' fill={currentColor.CSS} />
           </svg>
         </div>
-        <div className="cell small-6">
-          <div className="grid-x grid-margin-y">
-            {currentColorHistory.map((c, i) => (
-              <div
-                key={`currentColorHistory-${i}`}
-                className='cell small-1'
-                style={{background: c.CSS, width: '2em', height: '2em', cursor: 'pointer', borderRadius:'0.2em', margin: '0 0.5em'}}
-                onClick={() => {setCurrentColor(c)}}
-              />
-            ))}
-          </div>
+        <div className="cell small-3">
+            <ColorHistory currentColorHistory={currentColorHistory} setCurrentColor={setCurrentColor} />
         </div>
       </div>
     )
