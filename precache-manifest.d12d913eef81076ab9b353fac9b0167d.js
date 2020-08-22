@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "2cd5d95df344289227c4051ec7cbf047",
+    "revision": "7d5fd4e204677345cf752264d35be152",
     "url": "/beads/index.html"
   },
   {
-    "revision": "3b31b33ce3af9e628a30",
-    "url": "/beads/static/css/main.80e71cfc.chunk.css"
+    "revision": "df4ea8d9102d4156712e",
+    "url": "/beads/static/css/main.f53187e8.chunk.css"
   },
   {
     "revision": "51865af075861adfc0e0",
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/beads/static/js/2.ba81d9a3.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "3b31b33ce3af9e628a30",
-    "url": "/beads/static/js/main.a96ad937.chunk.js"
+    "revision": "df4ea8d9102d4156712e",
+    "url": "/beads/static/js/main.f63be0b1.chunk.js"
   },
   {
     "revision": "7eb059d6160310610cc0",
