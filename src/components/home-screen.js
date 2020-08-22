@@ -1,7 +1,7 @@
 import React from 'react'
-import './size-picker.css'
+import './home-screen.css'
 
-const SizePicker = ({ submitSliderValue }) => {
+const HomeScreen = ({ submitWorkspaceSettings }) => {
   const [sizeValue, setSizeValue] = React.useState(20)
 
   return (
@@ -13,7 +13,7 @@ const SizePicker = ({ submitSliderValue }) => {
           <span className='letter-a'>a</span>
           <span className='letter-d'>d</span>
           <span className='letter-s'>s</span>
-          </div>
+        </div>
       </div>
       <div className="cell small-2" />
       <div className="cell small-3">
@@ -34,7 +34,7 @@ const SizePicker = ({ submitSliderValue }) => {
               className="go-button"
               onClick={(e)=>{
                 e.stopPropagation()
-                submitSliderValue(sizeValue)}
+                submitWorkspaceSettings(sizeValue)}
               }
             >
               Go!
@@ -46,4 +46,4 @@ const SizePicker = ({ submitSliderValue }) => {
   )
 }
 
-export default SizePicker
+export default HomeScreen

@@ -1,5 +1,4 @@
 import React from 'react'
-import './color-picker.css'
 import HSLSliders from './hsl-sliders'
 import ColorHistory from './color-history'
 

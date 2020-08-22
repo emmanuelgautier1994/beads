@@ -52,13 +52,13 @@ class Workspace extends React.Component {
     )
   }
 
-  getColorState = (fullState) => this.getColoredBeads(fullState)
+  getColorState = (fullState) => this.getColoredBeadsKeys(fullState)
     .reduce((obj, key) => {
       obj[key] = fullState[key]
       return obj
     }, {})
 
-  getColoredBeads = (fullState) => Object.keys(fullState)
+  getColoredBeadsKeys = (fullState) => Object.keys(fullState)
     .filter(key => key.slice(0,11) === 'colorOfBead')
 
   commitCanvas = (canvas) => {
@@ -74,7 +74,7 @@ class Workspace extends React.Component {
   }
 
   newColorState = (canvas, prevState) => Object.assign(
-    this.getColoredBeads(prevState)
+    this.getColoredBeadsKeys(prevState)
       .reduce((obj, key) => {
         obj[key] = null
         return obj

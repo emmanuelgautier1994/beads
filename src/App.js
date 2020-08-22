@@ -1,7 +1,7 @@
 import React from 'react'
 import './App.css'
 import Workspace from './components/workspace'
-import SizePicker from './components/size-picker'
+import HomeScreen from './components/home-screen'
 
 
 class App extends React.Component {
@@ -16,7 +16,7 @@ class App extends React.Component {
       <div className="App" style={{height: '100%', width: '100%', touchAction: 'none'}}>
         {gridSize > 0 ?
         <Workspace gridSize={gridSize} goHome={() => { this.setState({gridSize: 0}) }} /> :
-        <SizePicker submitSliderValue={(v) => { this.setState({gridSize: parseInt(v)})} } />}
+        <HomeScreen submitWorkspaceSettings={(v) => { this.setState({gridSize: parseInt(v)})} } />}
       </div>
     )
   }

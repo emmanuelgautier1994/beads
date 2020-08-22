@@ -9,7 +9,6 @@ class UndoRedo extends React.Component {
   
   render(){
     const buttonStyle = {
-      // borderRadius: '2em',
       padding: '0 0.2em',
       fontSize: '3em',
       color: 'grey',
