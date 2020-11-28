@@ -14,10 +14,10 @@ class Canvas extends React.Component {
 
   render(){
     const handleClickOrTouch = this.props.onClickBead
-    const { size, paint, stopPainting } = this.props
+    const { size, verticalLayout, paint, stopPainting } = this.props
     
-    const viewBoxWidth = 2*size
-    const viewBoxHeight = 2*(size+1)
+    const viewBoxWidth = verticalLayout ? 2*size : 2*(size+1)
+    const viewBoxHeight = verticalLayout ? 2*(size+1) : 2*size
     const viewBox = `0 0 ${viewBoxWidth} ${viewBoxHeight}`
 
     return (
@@ -34,6 +34,7 @@ class Canvas extends React.Component {
               number={beadIndex}
               x={x}
               y={y}
+              verticalLayout={verticalLayout}
               viewBoxWidth={viewBoxWidth}
               color={this.getFillColor(beadIndex).CSS}
               paint={paint}

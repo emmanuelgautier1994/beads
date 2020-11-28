@@ -7,16 +7,27 @@ import HomeScreen from './components/home-screen'
 class App extends React.Component {
   constructor(props) {
     super(props)
-    this.state = { gridSize: 0 }
+    this.state = {
+      gridSize: 20,
+      verticalLayout: true,
+      showCanvas: false,
+    }
   }
 
-  render(){
-    const gridSize = this.state.gridSize
+  onClickGoButton = () => this.setState({ showCanvas: true })
+
+  setGridSize = (gridSize) => this.setState({gridSize})
+  setVerticalLayout = (verticalLayout) => this.setState({verticalLayout})
+
+  render() {
+    const { gridSize, verticalLayout, showCanvas } = this.state
+    const { setGridSize, setVerticalLayout, onClickGoButton } = this
+
     return (
       <div className="App" style={{height: '100%', width: '100%', touchAction: 'none'}}>
-        {gridSize > 0 ?
-        <Workspace gridSize={gridSize} goHome={() => { this.setState({gridSize: 0}) }} /> :
-        <HomeScreen submitWorkspaceSettings={(v) => { this.setState({gridSize: parseInt(v)})} } />}
+        {showCanvas > 0 ?
+        <Workspace gridSize={gridSize} verticalLayout={verticalLayout} goHome={() => { this.setState({showCanvas: false}) }} /> :
+        <HomeScreen {...{gridSize, setGridSize, verticalLayout, setVerticalLayout, onClickGoButton}} />}
       </div>
     )
   }

@@ -128,6 +128,7 @@ class Workspace extends React.Component {
         <div className="cell small-10 align-center-middle">
           <Canvas
             size={this.props.gridSize}
+            verticalLayout={this.props.verticalLayout}
             beadColors={beadColors}
             onClickBead={this.updateCurrentColorHistory}
             paint={this.paint}

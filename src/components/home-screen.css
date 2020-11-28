@@ -60,13 +60,36 @@
   cursor: pointer;
 }
 
-.go-button {
-  width: 4em;
-  height: 4em;
-  border-radius: 4em;
+button {
   background: #4CAF50;
   font-weight: 900;
   font-size: 2em;
   color: white;
   cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background: #378039;
+}
+
+.go-button {
+  width: 4em;
+  height: 4em;
+  border-radius: 4em;
+}
+
+.select-button {
+  padding: 0.5em;
+  margin: 0.01em;
+  width: 2em;
+  height: 2em;
+}
+
+.selected {
+  background: #214d22;
+}
+
+.selected:hover {
+  background: #214d22;
 }
