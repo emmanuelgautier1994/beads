@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/beads/static/css/main.4e9aee67.chunk.css",
-    "main.js": "/beads/static/js/main.bcc1d997.chunk.js",
-    "main.js.map": "/beads/static/js/main.bcc1d997.chunk.js.map",
+    "main.js": "/beads/static/js/main.350e44f9.chunk.js",
+    "main.js.map": "/beads/static/js/main.350e44f9.chunk.js.map",
     "runtime-main.js": "/beads/static/js/runtime-main.6aab70e8.js",
     "runtime-main.js.map": "/beads/static/js/runtime-main.6aab70e8.js.map",
     "static/js/2.1ea0a3cc.chunk.js": "/beads/static/js/2.1ea0a3cc.chunk.js",
     "static/js/2.1ea0a3cc.chunk.js.map": "/beads/static/js/2.1ea0a3cc.chunk.js.map",
     "index.html": "/beads/index.html",
-    "precache-manifest.4f420f2b8747acf7cfcff6406ad5941a.js": "/beads/precache-manifest.4f420f2b8747acf7cfcff6406ad5941a.js",
+    "precache-manifest.423fc135c0ccf26a87255c4acd69845a.js": "/beads/precache-manifest.423fc135c0ccf26a87255c4acd69845a.js",
     "service-worker.js": "/beads/service-worker.js",
     "static/css/main.4e9aee67.chunk.css.map": "/beads/static/css/main.4e9aee67.chunk.css.map",
     "static/js/2.1ea0a3cc.chunk.js.LICENSE.txt": "/beads/static/js/2.1ea0a3cc.chunk.js.LICENSE.txt"
@@ -17,6 +17,6 @@
     "static/js/runtime-main.6aab70e8.js",
     "static/js/2.1ea0a3cc.chunk.js",
     "static/css/main.4e9aee67.chunk.css",
-    "static/js/main.bcc1d997.chunk.js"
+    "static/js/main.350e44f9.chunk.js"
   ]
 }
