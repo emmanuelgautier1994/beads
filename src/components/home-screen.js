@@ -13,7 +13,9 @@ const HomeScreen = ({ gridSize, setGridSize, verticalLayout, setVerticalLayout, 
         <span className='letter-s'>s</span>
       </div>
     </div>
-    <div className="cell small-1" />
+    <div className="cell small-1">
+      There's a new version of this app! Go check it out <a href='https://emmanuelgautier1994.github.io/beads2' target='_blank'>here</a>!
+    </div>
     <div className="cell small-2">
       <div className='grid-x grid-padding-x align-center-middle'>
         <div className='cell small-2 text-center'>
